@@ -1,9 +1,11 @@
-{% extends 'base.html' %} {% load humanize %} {% block content %}
+{% extends 'base.html' %} {% load humanize %}
+{% block title %}Featured listings | BT Real Estate{% endblock %}
+{% block content %}
 <section id="showcase-inner" class="py-5 text-white">
   <div class="container">
     <div class="row text-center">
       <div class="col-md-12">
-        <h1 class="display-4">Browse Our Properties</h1>
+        <h1 class="display-4">Browse our properties</h1>
         <p class="lead">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
           pariatur!
@@ -21,7 +23,7 @@
         <li class="breadcrumb-item">
           <a href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
         </li>
-        <li class="breadcrumb-item active">Browse Listings</li>
+        <li class="breadcrumb-item active">Browse listings</li>
       </ol>
     </nav>
   </div>
@@ -45,7 +47,9 @@
                 <div class="listing-heading text-center">
                   <h4 class="text-primary">{{ listing.title }}</h4>
                   <p>
-                    <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}</p>
+                    <i class="fas fa-map-marker text-secondary"></i> 
+                    {{ listing.city }}, {{ listing.state }} {{ listing.zipcode }}
+                  </p>
                 </div>
                 <hr>
                 <div class="row py-2 text-secondary">
@@ -77,7 +81,7 @@
         {% endfor %}
       {% else %}
         <div class="col-md-12">
-          <p>No Listings Available</p>
+          <p>No listings available at the moment...</p>
         </div>
       {% endif %}
     </div>
